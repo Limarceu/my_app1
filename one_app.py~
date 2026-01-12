@@ -1,0 +1,35 @@
+from flask import *
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    html = '''
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <style>
+                h1 {
+                    color: blue;
+                    font-family: Times;
+                    font-size: 300%;}
+                p {
+                    color: red;
+                    font-family: Arial;
+                    font-size: 160%;
+                    font-weight: bold;}
+            </style>
+            <title>Titulo Da Pagina</title>
+        </head>
+        <body><p>Ola a Todos</p></body>
+        </html>'''
+
+    return Response(html)
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+    
